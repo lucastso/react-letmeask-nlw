@@ -1,5 +1,5 @@
 import { useHistory } from "react-router-dom";
-import illustrationImg from "../assets/images/backg.jpg";
+import illustrationImg from "../assets/images/roda.png";
 import logoImg from "../assets/images/logo.svg";
 import googleIconImg from "../assets/images/google-icon.svg";
 import "../styles/auth.scss";
