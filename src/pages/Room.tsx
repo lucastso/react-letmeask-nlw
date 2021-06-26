@@ -20,7 +20,7 @@ type FirebaseQuestions = Record<
   }
 >;
 
-type Question = {
+type QuestionProps = {
   id: string;
   author: {
     name: string;
@@ -39,7 +39,7 @@ export function Room() {
   const { user } = useAuth();
   const params = useParams<RoomParams>();
   const [newQuestion, setNewQuestion] = useState("");
-  const [questions, setQuestions] = useState<Question[]>([]);
+  const [questions, setQuestions] = useState<QuestionProps[]>([]);
   const [title, setTitle] = useState("");
 
   const roomId = params.id;
@@ -48,8 +48,8 @@ export function Room() {
     const roomRef = database.ref(`rooms/${roomId}`);
     roomRef.on("value", (room) => {
       const databaseRoom = room.val();
-      const firebaseQuestion: FirebaseQuestions = databaseRoom.questions ?? {};
-      const parsedQuestions = Object.entries(firebaseQuestion).map(
+      const firebaseQuestions: FirebaseQuestions = databaseRoom.questions ?? {};
+      const parsedQuestions = Object.entries(firebaseQuestions).map(
         ([key, value]) => {
           return {
             id: key,
@@ -75,8 +75,8 @@ export function Room() {
     }
     const question = {
       content: newQuestion,
-      authorId: {
-        user: user.name,
+      author: {
+        name: user.name,
         avatar: user.avatar,
       },
       isHighlighted: false,
@@ -99,12 +99,7 @@ export function Room() {
       <main>
         <div className="room-title">
           <h1>Sala {title}</h1>
-          {questions.length > 0 && (
-            <span>
-              {questions.length}{" "}
-              {questions.length > 1 ? "perguntas" : "pergunta"}
-            </span>
-          )}
+          {questions.length > 0 && <span>{questions.length} perguntas</span>}
         </div>
 
         <form onSubmit={handleSendQuestion}>
