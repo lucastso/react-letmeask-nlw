@@ -2,6 +2,11 @@
   display: flex;
   align-items: stretch;
   height: 100vh;
+  background: url(../assets/images/backg.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 
   aside {
     flex: 8;
@@ -77,7 +82,8 @@
     }
 
     a {
-      color: #d590af;
+      color: rgb(255, 0, 55);
+      text-decoration: none;
     }
   }
 
