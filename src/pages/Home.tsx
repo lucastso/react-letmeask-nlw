@@ -1,5 +1,5 @@
 import { useHistory } from "react-router-dom";
-import illustrationImg from "../assets/images/roda.png";
+import illustrationImg from "../assets/images/roda.svg";
 import logoImg from "../assets/images/logo.svg";
 import googleIconImg from "../assets/images/google-icon.svg";
 import "../styles/auth.scss";
@@ -30,6 +30,11 @@ export function Home() {
       alert("Room does not exist");
       return;
     }
+
+    if (roomRef.val().endedAt) {
+      alert("Room already closed.");
+      return;
+    }
     history.push(`/rooms/${roomCode}`);
   }
 
@@ -37,7 +42,7 @@ export function Home() {
     <div id="page-auth">
       <main>
         <div className="main-content">
-          <img src={logoImg} alt="Letmeask logo" />
+          <img src={logoImg} alt="Speako logo" />
           <p>
             Crie salas de Q&amp;A ao-vivo! Tire as dúvidas da sua audiência em
             tempo-real. Ou, faça perguntas para o palestrante.

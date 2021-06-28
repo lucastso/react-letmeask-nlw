@@ -1,5 +1,5 @@
 import { Link, useHistory } from "react-router-dom";
-import illustrationImg from "../assets/images/roda.png";
+import illustrationImg from "../assets/images/roda.svg";
 import logoImg from "../assets/images/logo.svg";
 import "../styles/auth.scss";
 import { Button } from "../components/Button";
@@ -21,7 +21,7 @@ export function NewRoom() {
 
     const firebaseRoom = await roomRef.push({
       title: newRoom,
-      authorId: user?.id,
+      author: user?.id,
     });
     history.push(`/rooms/${firebaseRoom.key}`);
   }
