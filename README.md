@@ -1,7 +1,15 @@
-# Getting Started with #letmeask from Rocketseat.
+## Recriation of #letmeask from Rocketseat, made by me.
 
-## Available Scripts
+### Built With 🛠
 
-In the project directory, you can run:
+* [React](https://reactjs.org/)
+* [TypeScript](https://www.typescriptlang.org/)
 
-### `yarn start`
+### If you want to, clone the repo
+   ```sh
+   git clone https://github.com/lucastso/react-letmeask-nlw
+   ```
+
+
+
+
