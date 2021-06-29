@@ -3,7 +3,7 @@
 ## Project view
 
 <p align="center">
-<img src="src/assets/images/tela.png" alt="Logo" />
+<img src="src/assets/images/tela.jpg" alt="page view" />
 </p>
 
 ### Built with 🛠
