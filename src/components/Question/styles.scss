@@ -8,6 +8,19 @@
     margin-top: 8px;
   }
 
+  &.highlighted {
+    border: 1px solid #ff0037;
+  }
+
+  &.answered {
+    background: #0c0c0c;
+
+    span,
+    p {
+      color: #333333 !important;
+    }
+  }
+
   p {
     color: #ffffff;
   }
@@ -34,6 +47,11 @@
       color: #ffffff;
       font-size: 14px;
     }
+  }
+
+  div {
+    display: flex;
+    gap: 8px;
   }
 
   button {
